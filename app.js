@@ -16,8 +16,6 @@ const makeRequest = async (start,end) => {
   const response = await fetch(req);
   const data = await response.json();
 
-  console.log(data);
-
   return data.articles.slice(start, end);
 };
 
