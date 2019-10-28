@@ -18,6 +18,7 @@
     color: white;
     background: rgb(12, 180, 231);
     border-radius: 50%; 
+    border: none; 
 }
 
 .btnC{
@@ -25,4 +26,6 @@
     background: rgb(214, 7, 25);
     border-radius: 50%; 
     font-size: 1.6rem;
+    padding: 10px;
+    border: none;
 }
