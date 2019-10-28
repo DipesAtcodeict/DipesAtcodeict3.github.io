@@ -101,6 +101,7 @@ countryName.forEach(country=>{
     articles=await makeRequest(start,end,country.innerHTML);
     showNews(articles);
     document.documentElement.scrollTop = 0;
+    window.scrollTo(0,0);
   })
 })
 
