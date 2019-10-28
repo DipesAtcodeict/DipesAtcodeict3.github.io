@@ -100,8 +100,8 @@ countryName.forEach(country=>{
     countriesName.style.display='none';
     articles=await makeRequest(start,end,country.innerHTML);
     showNews(articles);
+    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    window.scrollTo(0,0);
   })
 })
 
