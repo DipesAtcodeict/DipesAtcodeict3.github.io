@@ -99,8 +99,8 @@ countryName.forEach(country=>{
   country.addEventListener('click',async()=>{
     countriesName.style.display='none';
     articles=await makeRequest(start,end,country.innerHTML);
-    document.documentElement.scrollTop = 0;
     showNews(articles);
+    document.documentElement.scrollTop = 0;
   })
 })
 
