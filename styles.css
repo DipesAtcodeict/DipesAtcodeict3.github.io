@@ -1,3 +1,28 @@
 .customA{
     font-size: 2rem;
 }
+
+.countries {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    opacity: 0.5;
+}
+
+.countriesName{
+    display: none;
+}
+
+.countryName{
+    color: white;
+    background: rgb(12, 180, 231);
+    border-radius: 50%; 
+}
+
+.btnC{
+    color: white;
+    background: rgb(214, 7, 25);
+    border-radius: 50%; 
+    font-size: 1.6rem;
+}
