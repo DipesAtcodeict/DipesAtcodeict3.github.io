@@ -9,8 +9,8 @@ let start = 0;
 let end = 10;
 
 //funtion to make request
-const makeRequest = async (start,end) => {
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=4c11a320ce5844aea8e161ffdeabcd47`;
+const makeRequest = async (start,end,country='us') => {
+  const url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=4c11a320ce5844aea8e161ffdeabcd47`;
   const req = new Request(url);
 
   const response = await fetch(req);
@@ -57,28 +57,32 @@ const showNews = articles => {
     appBody.appendChild(div);
   });
   
-  //create button to load more news
-  const button = document.createElement('button');
-  button.innerHTML = 'Next-10 News';
-  button.classList.add('btn');
-  button.classList.add('btn-danger');
-  button.classList.add('d-block');
-  button.classList.add('mx-auto');
-  button.classList.add('mt-3');
-  button.classList.add('mb-2');
-
-  appBody.appendChild(button);
-
-  button.addEventListener('click',async ()=>{
-    start= 10;
-    end = 20;
-    articles = await makeRequest(start,end);
-    showNews(articles);
-    document.documentElement.scrollTop = 0;
-    appBody.lastChild.remove();
-  })
+ createMoreNewsButton();
 
 };
+
+const createMoreNewsButton = () => {
+   //create button to load more news
+   const button = document.createElement('button');
+   button.innerHTML = 'Next-10 News';
+   button.classList.add('btn');
+   button.classList.add('btn-danger');
+   button.classList.add('d-block');
+   button.classList.add('mx-auto');
+   button.classList.add('mt-3');
+   button.classList.add('mb-2');
+ 
+   appBody.appendChild(button);
+ 
+   button.addEventListener('click',async ()=>{
+     start= 10;
+     end = 20;
+     articles = await makeRequest(start,end);
+     showNews(articles);
+     document.documentElement.scrollTop = 0;
+     appBody.lastChild.remove();
+   })
+}
 
 //here comes the new features
 //country based news
