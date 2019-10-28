@@ -79,3 +79,23 @@ const showNews = articles => {
   })
 
 };
+
+//here comes the new features
+//country based news
+
+const changeCountry = document.querySelector(".btnC");
+const countriesName = document.querySelector(".countriesName");
+const countryName = document.querySelectorAll(".countryName");
+
+changeCountry.addEventListener('click',()=>{
+  countriesName.style.display='inline';
+})
+
+countryName.forEach(country=>{
+  country.addEventListener('click',async()=>{
+    countriesName.style.display='none';
+    articles=await makeRequest(start,end,country.innerHTML);
+    showNews(articles);
+  })
+})
+
