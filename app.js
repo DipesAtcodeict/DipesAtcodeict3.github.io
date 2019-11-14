@@ -100,6 +100,7 @@ countryName.forEach(country=>{
     countriesName.style.display='none';
     articles=await makeRequest(start,end,country.innerHTML);
     showNews(articles);
+    document.title = `${country.innerHTML.toUpperCase()}: News 20`
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   })
