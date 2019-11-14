@@ -100,7 +100,25 @@ countryName.forEach(country=>{
     countriesName.style.display='none';
     articles=await makeRequest(start,end,country.innerHTML);
     showNews(articles);
-    document.title = `${country.innerHTML.toUpperCase()}: News 20`
+    if(country.innerHTML=='au'){
+      console.log('here')
+      document.title = `Australia: News Top 20`
+    }
+    if(country.innerHTML=='in'){
+      document.title = `India: News Top 20`
+    }
+    if(country.innerHTML=='ru'){
+      document.title = `Russia: News Top 20`
+    }
+    if(country.innerHTML=='fr'){
+      document.title = `France: News Top 20`
+    }
+    if(country.innerHTML=='ru'){
+      document.title = `Russia: News Top 20`
+    }
+    if(country.innerHTML=='us'){
+      document.title = `USA: News Top 20`
+    }
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   })
