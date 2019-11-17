@@ -1,7 +1,7 @@
 const allElems = document.querySelector('body');
 const darkBtn = document.querySelector('.dark-mode');
 
-darkBtn.addEventListener('click',async()=>{
+darkBtn.addEventListener('click',()=>{
     if(darkBtn.innerHTML==='Dark Mode'){
         
         darkBtn.innerHTML = 'Light Mode';
