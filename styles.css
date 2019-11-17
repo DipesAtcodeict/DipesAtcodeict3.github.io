@@ -36,3 +36,11 @@
 .test {
     background-color: rgb(0, 0, 0);
 }
+
+.dark-mode {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 8px;
+    opacity: 0.7;
+    z-index: 25;
+}
